@@ -30,7 +30,7 @@ jobs:
       with:
         process: 'install-mage-os'
         enable: 'pwa'
-        magento_version: 2.4.0
+        magento_version: 2.4.5
 
     - name: 'launch magento2 build'
       if: always()
