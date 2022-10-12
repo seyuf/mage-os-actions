@@ -29,6 +29,7 @@ jobs:
       uses: MAD-I-T/magento-actions@master
       with:
         process: 'install-mage-os'
+        enable: 'pwa'
         magento_version: 2.4.0
 
     - name: 'launch magento2 build'
@@ -44,7 +45,7 @@ jobs:
         #override_settings: 1
 
     - name: 'launch security scanner files'
-      #if: always()
+      if: always()
       #if: ${{false}}
       uses: MAD-I-T/magento-actions@master
       env:
@@ -54,7 +55,7 @@ jobs:
         elasticsearch: 1
             
     - name: 'launch security scanner modules'
-      #if: always()
+      if: always()
       #if: ${{false}}
       uses: MAD-I-T/magento-actions@master
       env:
