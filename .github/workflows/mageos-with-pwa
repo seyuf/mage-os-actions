@@ -7,7 +7,7 @@ on: [push]
 jobs:
   magento2-build:
     runs-on: ubuntu-latest
-    name: 'm2 tests & build'
+    name: 'mageos m2 & pwa test and build'
     services:
       mysql:
         image: docker://mysql:8.0
