@@ -1,6 +1,6 @@
 
 
-name: m2-actions-test
+name: Install magento from mage os
 on: [push]
 
 
@@ -29,38 +29,4 @@ jobs:
       uses: MAD-I-T/magento-actions@master
       with:
         process: 'install-mage-os'
-        enable: 'pwa'
         magento_version: 2.4.5
-
-    - name: 'launch magento2 build'
-      if: always()
-      #if: ${{false}}
-      id: build
-      uses: MAD-I-T/magento-actions@master
-      with:
-        process: 'build'
-        #php: '7.4'
-        #composer_version: 2
-        elasticsearch: 1
-        #override_settings: 1
-
-    - name: 'launch security scanner files'
-      if: always()
-      #if: ${{false}}
-      uses: MAD-I-T/magento-actions@master
-      env:
-        COMPOSER_AUTH: ${{secrets.COMPOSER_AUTH}}
-      with:
-        process: 'security-scan-files'
-        elasticsearch: 1
-            
-    - name: 'launch security scanner modules'
-      if: always()
-      #if: ${{false}}
-      uses: MAD-I-T/magento-actions@master
-      env:
-        COMPOSER_AUTH: ${{secrets.COMPOSER_AUTH}}
-      with:
-        process: 'security-scan-modules'
-        elasticsearch: 1
-    
