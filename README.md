@@ -6,10 +6,10 @@ This is a magento installer using github action.
 ```
     - name: 'install fresh magento repo'
       #if: ${{false}}
-      uses: MAD-I-T/magento-actions@master
+      uses: MAD-I-T/magento-actions@v3.20
       with:
         process: 'install-mage-os'
-        magento_version: 2.4.5
+        magento_version: 2.4.6
 ```
 
 The benefit of using Mage os is that no authentication is required. As you're not using the magento composer repo.
