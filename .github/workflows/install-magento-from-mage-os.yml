@@ -29,11 +29,12 @@ jobs:
         options: -e="discovery.type=single-node" -e "plugins.security.disabled=true"  -e "plugins.security.ssl.http.enabled=false" --health-cmd="curl http://localhost:9200/_cluster/health" --health-interval=10s --health-timeout=5s --health-retries=10
       
     steps:
-    - uses: actions/checkout@v2 
+    - uses: actions/checkout@v4
     - name: 'install fresh magento repo'
       #if: ${{false}}
-      if: always()
+      if: (!cancelled())
       uses: MAD-I-T/magento-actions@v3.20
       with:
         process: 'install-mage-os'
-        magento_version: 2.4.6
+        magento_version: 2.4.7
+        #no_push: 1
